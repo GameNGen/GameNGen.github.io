@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="GameNGen">
+  <meta property="og:title" content="GameNGen" />
+  <meta property="og:description" content="Diffusion Models Are Real-Time Game Engines" />
+  <meta property="og:url" content="URL OF THE WEBSITE" />
+  <meta property="og:image" content="static/images/teaser_2.png" />
+  <meta property="og:image:width" content="3224" />
+  <meta property="og:image:height" content="1500" />
+
+
+  <meta name="twitter:title" content="GameNGen">
+  <meta name="twitter:description" content="Diffusion Models Are Real-Time Game Engines">
+  <meta name="twitter:image" content="static/images/teaser_2.png">
+  <meta name="twitter:card" content="GameNGen">
+  <meta name="keywords" content="GameNGen">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>GameNGen</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="hero-body" style="padding-bottom: 1rem">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Diffusion Models Are Real-Time Game Engines</h1>
+            <div class="is-size-4 publication-authors">
+              <div class="author-block">
+                <span>
+                  <a href="https://www.linkedin.com/in/dani-valevski-a3b5936/" target="_blank">Dani
+                    Valevski</a><sup>*</sup>
+                </span>
+                <div class="author-affiliation">Google Research</div>
+              </div>
+              <div class="author-block">
+                <span>
+                  <a href="https://yanivle.github.io/" target="_blank">Yaniv Leviathan</a><sup>*</sup>
+                </span>
+                <div class="author-affiliation">Google Research</div>
+              </div>
+              <div class="author-block">
+                <span>
+                  <a href="https://moabarar.github.io/" target="_blank">Moab Arar</a><sup>*†</sup>
+                </span>
+                <div class="author-affiliation">Tel Aviv University</div>
+              </div>
+              <div class="author-block">
+                <span>
+                  <a href="https://shlomifruchter.github.io/" target="_blank">Shlomi Fruchter</a><sup>*</sup>
+                </span>
+                <div class="author-affiliation">Google Deepmind</div>
+              </div>
+              <span class="eql-cntrb"><small><br><sup>*</sup>Equal Contribution <sup>†</sup>Work done while at Google
+                  Research</small></span>
+            </div>
+            <!-- <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/TODO.pdf" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+            </div>
+          </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero is-small">
+    <div class="hero-body" style="padding-top: 0">
+      <div class="container">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths" style="max-width:960px">
+            <div class="publication-video">
+              <iframe
+                src="https://www.youtube.com/embed/r_5Obb71zaQ?autoplay=1&mute=1&loop=1&showinfo=0&playlist=r_5Obb71zaQ"
+                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+        <div class="subtitle has-text-centered">
+          <span>Real-time</span> recordings of people playing the game <a
+            href="https://en.wikipedia.org/wiki/Doom_(1993_video_game)" target="_blank">DOOM</a>
+          <span><b>simulated entirely by the <i>GameNGen</i> neural model</b></span>.
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="abstract content has-text-justified">
+            <p>
+              We present <i>GameNGen</i>, the first game engine powered entirely by a neural model
+              that enables real-time interaction with a complex environment over long trajectories at high quality.
+              <i>GameNGen</i> can interactively simulate the classic game DOOM at over 20 frames per second on a single
+              TPU.
+              <i>GameNGen</i> simulations do not suffer from accumulated deterioration even after long play sessions,
+              achieving a PSNR of 29.4, comparable to lossy JPEG compression.
+              Human raters are only slightly better than random chance at distinguishing short clips of the game
+              from clips of the simulation.
+              <i>GameNGen</i> is trained in two phases:
+              (1) an RL-agent learns to play the game and the training sessions are recorded, and
+              (2) a diffusion model is trained to produce the next frame, conditioned on the sequence of past frames and
+              actions.
+              Conditioning augmentations enable stable auto-regressive generation over long trajectories.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container is-centered has-text-centered">
+        <h2 class="title is-3">Full Gameplay Videos</h2>
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-video1" style="max-width: 100%;">
+            <video poster id="video1" muted autoplay controls loop playsinline height="100%"
+              src="static/videos/e1m1_t.mp4">
+            </video>
+          </div>
+          <div class="item item-video2">
+            <video poster id="video2" muted autoplay controls loop playsinline height="100%"
+              src="static/videos/e1m3.mp4">
+            </video>
+          </div>
+          <div class="item item-video3">
+            <video poster id="video3" muted autoplay controls loop playsinline height="100%"
+              src="static/videos/e1m5.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video4">
+            <video poster id="video4" muted autoplay controls loop playsinline height="100%"
+              src="static/videos/e1m9.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video5">
+            <video poster id="video5" muted autoplay controls loop playsinline height="100%"
+              src="static/videos/e2m2.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section hero is-small">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Architecture</h2>
+            <div class="content has-text-justified">
+              <p></p>
+              <img src="static/images/architecture_07_20.png" alt="Architecture overview" />
+              <p><b>Data Collection via Agent Play:</b>
+                Since we cannot collect human gameplay at scale, as a first stage we train an automatic RL-agent to play
+                the game,
+                persisting it's training episodes of actions and observations, which become the training data for our
+                generative model.
+              </p>
+              <p><b>Training the Generative Diffusion Model:</b> We re-purpose a small diffusion model, <a
+                  href="https://arxiv.org/abs/2112.10752" target="_blank">Stable Diffusion</a> v1.4,
+                and condition it on a sequence of previous actions and observations (frames). To mitigate
+                auto-regressive drift
+                during inference, we corrupt context frames by adding Gaussian noise to encoded frames during training.
+                This allows the network to correct information sampled in previous frames, and we found it to be
+                critical
+                for preserving visual stability over long time periods.
+              </p>
+              <p><b>Latent Decoder Fine-Tuning:</b> The pre-trained auto-encoder of <a
+                  href="https://arxiv.org/abs/2112.10752" target="_blank">Stable Diffusion</a> v1.4, which compresses
+                8x8
+                pixel patches into 4 latent channels, results in meaningful artifacts when predicting game frames, which
+                affect
+                small details and particularly the bottom bar HUD. To leverage the pre-trained knowledge while improving
+                image quality, we train just the decoder of the latent auto-encoder using an MSE loss computed
+                against the target frame pixels.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@article{TODO once this is on arxiv}</code></pre>
+    </div>
+  </section> -->
+
+  <section class="section" id="Acknowledgements">
+    <div class="container is-max-desktop content">
+      <h2 class="title">Acknowledgements</h2>
+      We'd like to extend a huge thank you to Eyal Segalis, Eyal Molad, Matan Kalman, Nataniel Ruiz,
+      Amir Hertz, Matan Cohen, Yossi Matias, Yael Pritch, Danny Lumen, Valerie Nygaard, the Theta Labs and Google
+      Research teams, and our families for insightful feedback, ideas, suggestions, and support.
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                target="_blank">Academic Project Page Template</a> which was adopted from the <a
+                href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Statcounter tracking code -->
+
+  <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+  <!-- End of Statcounter Code -->
+
+</body>
+
+</html>
